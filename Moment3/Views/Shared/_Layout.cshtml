@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="sv-SE">
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="~/css/CSS.css">
+    <title>@ViewData["Title"] = "Startsidan"</title>
+
+</head>
+<body>
+
+
+    <div id="container">
+        <header id="mainheader">
+            <h1>MVC</h1>
+            <div id="headercontent">
+
+                <h2>MVC</h2>
+
+                <a asp-controller="Home" asp-action="Index">
+
+                    <img src="~/image/natur.png" alt="Header-bild">
+                </a>
+            </div>
+            <nav class="mainmenu">
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="Home" asp-action="Cdskivor">CD-skivor</a></li>
+                    <li><a asp-controller="Home" asp-action="artists">Artister</a></li>
+                    <li><a asp-controller="Home" asp-action="Songs">Sångare</a></li>
+
+                </ul>
+            </nav>
+
+            <div id="search">
+                <form>
+                    <input type="text" name="searchstring" id="searchstring">
+                    <input type="submit" value="Sök" id="searchbutton">
+                </form>
+            </div>
+
+        </header>
+
+
+        @RenderBody()
+
+
+        <footer>
+        </footer>
+
+
+    </div>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
